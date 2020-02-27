@@ -1,0 +1,40 @@
+@media screen and (min-width: 400px) {
+  #frontPage {
+    text-align: center;
+  }
+
+  .top-li-render {
+    display: inline;
+  }
+  .top-li-render:nth-child(2) {
+    margin-left: 2em;
+  }
+
+  #front-button-selection {
+    margin-top: 1em;
+  }
+
+  #front-page-bookmark {
+    text-align: center;
+    border: 1px solid black;
+  }
+
+  #createNewBookmark {
+    padding-left: 1em;
+  }
+
+  .action-buttons {
+    margin-top: 1em;
+  }
+
+  #input-field {
+    margin: auto;
+    max-width: 95%;
+    height: 25em;
+    border: 1px solid black;
+  }
+
+  #create-a-bookmark-title {
+    padding-left: 0.67em;
+  }
+}
