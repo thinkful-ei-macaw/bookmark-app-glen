@@ -94,7 +94,7 @@ function generateHeading() {
     </select> 
     </section>
     <div class="image-div">
-            <img class="no-rating-holder hide-bunny" src="../src/Image/bookmark.jpeg" alt="No ratings placeholder" />
+            <img class="no-rating-holder" src="https://www.itsalwaysautumn.com/wp-content/uploads/2017/09/how-to-make-origami-bookmark-corner-bookmark-woodland-creatures-free-printable-7.jpg" alt="No ratings placeholder" />
             <p class="bunny-text">I am the Bookmark Bunny!</p>
             <p class="bunny-text">Below me, I collect your Bookmarks!</p>
             </div>
