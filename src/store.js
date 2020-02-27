@@ -1,5 +1,3 @@
-// function getBookmark() {}
-
 function createBookmark(obj) {
   let bookmarkObj = { ...obj, expanded: false };
   this.bookmarks.push(bookmarkObj);
@@ -27,7 +25,6 @@ export default {
   error: null,
   filter: 0,
   createBookmark,
-  // getBookmark,
   deleteBookmark,
   expandDescription
 };

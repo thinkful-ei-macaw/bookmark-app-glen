@@ -7,24 +7,45 @@ import store from './store.js';
 
 function generateBookMarkElement(bookmark) {
   let showDesc = bookmark.expanded
-    ? `<li class="hidden hideMe"><a href='${bookmark.url}'>${bookmark.url}</a></li>
-  <li class="hidden hideMe">${bookmark.desc}</li>`
+    ? `
+    <div class="description-div">
+    <h3>Description</h3>
+    <li class="hidden hideMe">${bookmark.desc}</li>
+    </div>
+    <div class="url-delete-div">
+    <div>
+    <li class="hidden hideMe"><a href='${bookmark.url}' target ='_blank'>Website Link</a></li>
+    </div>
+    <div class="delete-bookmark">
+    <button class="deleteBookmark" type="submit">Delete</button>
+    </div>
+    </div>
+`
     : '';
 
   return `
         <section id="front-page-bookmark">
         <ul data-id='${bookmark.id}'>
+        <div class="info-header">
+        <div class="bookmark-title">
+        <h3>Bookmark</h3>
         <li>${bookmark.title}</li>
-        <li>${bookmark.rating}</li>
-        <button class="hideInfo" type="submit">Show Description</button>
-        <button class="deleteBookmark" type="submit">Delete</button>
+        </div>
+        <div class="bookmark-rating">
+        <h3>Rating</h3>
+        <li>${bookmark.rating} stars</li>
+        </div>
+        </div>
+        <div class="bottom-buttons">
+        
+        </div>
         ${showDesc}
         </ul>
         </section>`;
 }
 
 function hideAndShow() {
-  $('main').on('click', '.hideInfo', e => {
+  $('main').on('click', '.info-header', e => {
     let id = $(e.currentTarget)
       .closest('ul')
       .data('id');
@@ -72,6 +93,11 @@ function generateHeading() {
     ${options}
     </select> 
     </section>
+    <div class="image-div">
+            <img class="no-rating-holder hide-bunny" src="../src/Image/bookmark.jpeg" alt="No ratings placeholder" />
+            <p class="bunny-text">I am the Bookmark Bunny!</p>
+            <p class="bunny-text">Below me, I collect your Bookmarks!</p>
+            </div>
  
         `;
 }
@@ -81,7 +107,7 @@ function generateHeading() {
 function generateBookmarkPage() {
   return `
   
-  <article id ="input-field">
+  <div id ="input-field">
   <header>
     <h2 id="create-a-bookmark-title">Create a Bookmark</h2>
   </header>
@@ -89,24 +115,26 @@ function generateBookmarkPage() {
   
    <label for="title">Title</label>
    <br>
-   <input type="text" name="title-field" id="title">
+   <input type="text" name="title-field" id="title" placeholder="Title of your bookmark" required>
    <br>
    <label for="url">URL</label>
    <br>
-   <input type="text" name="url-field" id="url">
+   <input type="url" name="url-field" id="url" placeholder="http://wwww.princesscelestia.com" required>
    <br>
    <label for="description">Description</label>
    <br>
-   <input type="text" name="description-field" id="description">
+   <textarea rows="4" maxlength="160" name="description-field" id="description" placeholder="Enter your amazing description of this bookmark here!" required></textarea>
    <br>
    <label for="rating">Rating</label>
    <br>
-   <input type="number" name="rating-field" id="rating">
+   <input type="number" name="rating-field" id="rating" min="1" max="5" placeholder="Rating of 1 to 5"required>
    <br>
-  <button class='action-buttons' type="submit" id='create'>Submit</button>
-  <button class='action-buttons' type='submit' id='cancel'>Cancel</button>
-  </form>
-  </article>`;
+   <div class="action-button-div">
+   <button class='action-buttons' type="submit" id='create'>Submit</button>
+   <button class='action-buttons' type='submit' id='cancel'>Cancel</button>
+   </div>
+   </form>
+   </div>`;
 }
 
 function ratingsFilter() {
@@ -131,7 +159,7 @@ function render() {
     html += items.map(generateBookMarkElement).join('');
   } else if (items.length === 0) {
     html = generateHeading();
-    html += `<img class="no-rating-holder" src="../src/Image/bookmark.jpeg" alt="No ratings placeholder" />`;
+    html += '';
   }
   $('main').html(html);
 }

@@ -1,6 +1,82 @@
 @media screen and (min-width: 400px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: black;
+  }
+
   #frontPage {
     text-align: center;
+    border: 1px solid black;
+    border-radius: 1em;
+    margin-bottom: 1em;
+    margin-top: 1.5em;
+    padding: 1em 0 1em 0;
+    background-color: white;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #frontPage header {
+    font-size: 2.6em;
+    margin-bottom: 0.4em;
+  }
+
+  #ratings-select {
+    padding: 0.53em 0.64em;
+    padding-bottom: 0.6em;
+    font-size: 0.8em;
+    margin-left: 1em;
+  }
+
+  #ratings-select:hover {
+    cursor: pointer;
+  }
+
+  .ratings-selection:hover {
+    cursor: pointer;
+  }
+
+  .info-header {
+    display: flex;
+  }
+
+  .info-header:hover {
+    cursor: pointer;
+  }
+
+  #addBookmark {
+    padding: 0.54em;
+    font-size: 0.8em;
+    margin-right: 4em;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 1em;
+  }
+
+  .createNewBookmark,
+  label {
+    font-weight: bold;
+  }
+
+  .deleteBookmark {
+    border: none;
+    color: white;
+    padding: 0.54em;
+    font-size: 0.9em;
+    background-color: black;
+  }
+
+  .deleteBookmark:hover {
+    cursor: pointer;
+  }
+
+  #addBookmark:hover {
+    cursor: pointer;
   }
 
   .top-li-render {
@@ -15,26 +91,221 @@
   }
 
   #front-page-bookmark {
-    text-align: center;
     border: 1px solid black;
+    margin-bottom: 1em;
+    border-radius: 1em;
+    background-color: white;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bookmark-rating {
+    padding-bottom: 2em;
+    margin-left: auto;
+    margin-right: 4em;
+  }
+
+  #front-page-bookmark li {
+    list-style: none;
+  }
+
+  .description-div {
+    word-wrap: break-word;
+    margin-right: 8em;
+    margin-bottom: 1em;
+  }
+
+  .url-delete-div {
+    display: flex;
+  }
+
+  .hidden {
+    margin-top: 0.3em;
+  }
+
+  .hidden a {
+    text-decoration: none;
+  }
+
+  .hidden a:hover {
+    text-decoration: underline;
+    color: orange;
+  }
+
+  .delete-bookmark {
+    margin-left: auto;
+    margin-right: 4em;
   }
 
   #createNewBookmark {
-    padding-left: 1em;
+    padding-left: 2em;
   }
 
   .action-buttons {
     margin-top: 1em;
+    margin-right: 3em;
+    padding: 0.54em 0.8em 0.54em 0.7em;
+    font-size: 0.9em;
+    background-color: black;
+    color: white;
+    border: none;
+  }
+
+  .action-buttons:hover {
+    cursor: pointer;
+  }
+
+  .action-button-div {
+    text-align: center;
   }
 
   #input-field {
     margin: auto;
-    max-width: 95%;
-    height: 25em;
+    margin-top: 5em;
+    max-width: 90%;
+    height: 28em;
     border: 1px solid black;
+    background-color: white;
+    border-radius: 1em;
   }
 
   #create-a-bookmark-title {
-    padding-left: 0.67em;
+    padding-left: 1.25em;
+  }
+
+  #title,
+  #url,
+  #description {
+    width: 90%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0.2em 0 0.2em 0.5em;
+  }
+
+  #description {
+    font-size: 1.07em;
+    margin-bottom: 0.5em;
+  }
+
+  #rating {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+    padding-left: 0.5em;
+    width: 30%;
+    font-size: 0.8em;
+  }
+
+  .no-rating-holder {
+    height: 13em;
+    border-radius: 2em;
+  }
+
+  .no-rating-holder,
+  p {
+    color: white;
+  }
+
+  .image-div {
+    text-align: center;
+  }
+
+  li {
+    font-size: 1.05em;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #frontPage {
+    width: 80%;
+  }
+
+  #frontPage header {
+    font-size: 3em;
+  }
+
+  #front-page-bookmark {
+    width: 80%;
+  }
+
+  .no-rating-holder {
+    height: 20em;
+  }
+
+  .bunny-text {
+    font-size: 1.3em;
+  }
+
+  #addBookmark {
+    font-size: 0.9em;
+  }
+
+  #ratings-select {
+    font-size: 0.9em;
+  }
+
+  .description-div {
+    word-wrap: break-word;
+    margin-right: 11em;
+  }
+
+  li {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  #frontPage {
+    width: 65%;
+  }
+
+  #frontPage header {
+    font-size: 3.3em;
+  }
+
+  #front-page-bookmark {
+    width: 65%;
+  }
+
+  .no-rating-holder {
+    height: 23em;
+  }
+
+  ul {
+    padding-left: 5em;
+  }
+
+  .bookmark-rating {
+    margin-right: 10em;
+  }
+
+  .delete-bookmark {
+    margin-right: 5em;
+  }
+
+  li {
+    font-size: 1.3em;
+  }
+
+  .deleteBookmark {
+    font-size: 1.2em;
+  }
+
+  .delete-bookmark {
+    margin-right: 4em;
+    margin-bottom: 0.5em;
+  }
+
+  #addBookmark {
+    font-size: 1em;
+  }
+
+  #ratings-select {
+    font-size: 1em;
+  }
+
+  .description-div {
+    word-wrap: break-word;
+    margin-right: 12em;
   }
 }
